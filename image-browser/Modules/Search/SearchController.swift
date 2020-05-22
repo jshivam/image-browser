@@ -58,6 +58,7 @@ class SearchController: BaseController {
             $0.borderStyle = .roundedRect
             $0.placeholder = Constants.placeholder
             $0.setTextFiledView(viewType: .actionButton(iconName: Constants.searchIconName), position: .left, tapHandler: nil)
+            $0.historyTapHandler = { [weak self] keyword in self?.handleHistoryTap(keyword: keyword) }
         }
     }
 
@@ -94,13 +95,24 @@ class SearchController: BaseController {
         let controller = SearchResultsController(viewModel: viewModel)
         navigationController?.pushViewController(controller, animated: true)
     }
+
+    private func handleHistoryTap(keyword: String) {
+        textField.text = keyword
+        textField.endEditing(true)
+        fetchImages(keyword: keyword)
+    }
 }
 
 extension SearchController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let keyword = textField.text, !keyword.isEmpty else { return true }
-        textField.resignFirstResponder()
+        textField.endEditing(true)
         fetchImages(keyword: keyword)
+        return true
+    }
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.textField.history = viewModel.keywordHistory()
         return true
     }
 }

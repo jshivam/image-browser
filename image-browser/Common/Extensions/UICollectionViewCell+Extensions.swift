@@ -25,8 +25,4 @@ extension UICollectionView {
     func dequeueCell<Cell: UICollectionViewCell>(ofType cellType: Cell.Type, for indexPath: IndexPath) -> Cell {
         return dequeueReusableCell(withReuseIdentifier: String(describing: cellType), for: indexPath) as! Cell
     }
-
-    func isLastCell(for indexpath: IndexPath) -> Bool {
-        return (numberOfItems(inSection: indexpath.section) - 1 ) == indexpath.row
-    }
 }
