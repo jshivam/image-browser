@@ -11,4 +11,5 @@ import Foundation
 
 extension FloatingPoint {
     static var sidePadding: Self { return 15 }
+    static var cornerRadius: Self { return 8 }
 }

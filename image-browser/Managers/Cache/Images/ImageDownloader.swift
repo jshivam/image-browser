@@ -73,14 +73,13 @@ extension UIImageView {
     }
 
     func loadImage(url: URL) {
-
         self.url = url
         downloader.dowload(url: url) { [weak self] (image, downloadedURL) in
             if let `self` = self,
                 let downloadedURL = downloadedURL,
                 let latestRequestURL = self.url, latestRequestURL == downloadedURL {
-                print("transition called for \(downloadedURL.absoluteString)")
-                self.transition(toImage: image)
+//                print("transition called for \(downloadedURL.absoluteString)")
+                self.image = image
             } else {
                 self?.url = nil
             }

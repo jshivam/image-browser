@@ -31,6 +31,7 @@ class SearchController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         addSubViews()
         adjustSubViews()
         setupConstraints()
@@ -88,9 +89,15 @@ class SearchController: UIViewController {
             case .error(let error):
                 print(error)
             case .fetched:
-                print(self.viewModel.images.count)
+                self.pushResultsController(keyword: keyword, images: self.viewModel.images)
             }
         }
+    }
+
+    private func pushResultsController(keyword: String, images: [ImageItem]) {
+        let viewModel = SearchResultsViewModel(images: images, keyword: keyword)
+        let controller = SearchResultsController(viewModel: viewModel)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
