@@ -40,7 +40,8 @@ final class SJTextField: UITextField {
 
     private var keyboardMinY: CGFloat?
     var history: [String] = [] {
-        didSet{
+        didSet {
+            tableView.isHidden = history.isEmpty
             tableView.reloadData()
         }
     }
@@ -66,11 +67,11 @@ final class SJTextField: UITextField {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        if let minY = keyboardMinY {
+        if let minY = keyboardMinY, !history.isEmpty {
             tableView.isHidden = false
             let y = bounds.maxY + Constants.sidePadding / 2
-            let maxHeight = minY - frame.maxY
-            let height = min(maxHeight, tableView.contentSize.height) - Constants.sidePadding
+            let maxHeight = minY - frame.maxY - Constants.sidePadding
+            let height = min(maxHeight, tableView.contentSize.height)
             tableView.frame = CGRect(x: 0, y: y , width: bounds.width, height: height)
         } else {
             tableView.isHidden = true

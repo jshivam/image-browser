@@ -11,9 +11,9 @@ import UIKit
 class ImageDownloader {
     static let shared = ImageDownloader()
     private let imageCache = NSCache<NSString, UIImage>()
+    private let Q = DispatchQueue(label: "queue.imageCache", attributes: .concurrent)
 
     func dowload(url: URL, completion: @escaping (UIImage?, URL?) -> Void) {
-
         let cache =  URLCache.shared
         let request = URLRequest(url: url)
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
@@ -29,16 +29,17 @@ class ImageDownloader {
         }
         else {
             DispatchQueue.global(qos: .background).async {
-
                 URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                     if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
                         let cachedData = CachedURLResponse(response: response, data: data)
                         cache.storeCachedResponse(cachedData, for: request)
-                        DispatchQueue.main.async {
-                            if let urlString = response.url?.absoluteString {
+                        if let urlString = response.url?.absoluteString {
+                            self.Q.sync(flags: .barrier) {
                                 self.imageCache.setObject(image, forKey: urlString as NSString)
+                                DispatchQueue.main.async {
+                                    completion(image, response.url)
+                                }
                             }
-                            completion(image, response.url)
                         }
                     } else {
                         DispatchQueue.main.async {
@@ -78,20 +79,9 @@ extension UIImageView {
         downloader.dowload(url: url) { [weak self] (image, downloadedURL) in
             if let `self` = self,
                 let downloadedURL = downloadedURL,
-                let latestRequestURL = self.url, latestRequestURL == downloadedURL {
+                let latestRequestURL = self.url, latestRequestURL.absoluteString == downloadedURL.absoluteString {
                 self.image = image
-            } else {
-                self?.url = nil
             }
         }
-    }
-
-    private func transition(toImage image: UIImage?) {
-        UIView.transition(with: self, duration: 1,
-                          options: [.transitionCrossDissolve],
-                          animations: {
-                            self.image = image
-        },
-                          completion: nil)
     }
 }
