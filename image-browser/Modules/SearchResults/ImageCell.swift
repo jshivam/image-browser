@@ -11,6 +11,7 @@ import Stevia
 
 class ImageCell: UICollectionViewCell {
     let imageView = UIImageView()
+    private let loaderView = LoaderView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,6 +42,7 @@ class ImageCell: UICollectionViewCell {
 
     private func setupConstraints() {
         imageView.fillContainer()
+        loaderView.centerVertically().centerHorizontally()
     }
 
     func configure(url: URL) {
