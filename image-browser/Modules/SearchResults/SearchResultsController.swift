@@ -17,13 +17,12 @@ private struct Constants {
     static let sectionInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: cellSidePadding, bottom: 0, right: cellSidePadding)
 }
 
-final class SearchResultsController: UIViewController {
+final class SearchResultsController: BaseController {
     private let collectionView: UICollectionView = {
         let layout = SJColumnFlowLayout(cellsPerRow: Constants.cellPerRow,
                                         minimumInteritemSpacing: Constants.cellInBetweenPadding,
                                         minimumLineSpacing: Constants.cellVerticalPadding,
                                         sectionInset: Constants.sectionInset)
-        layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
@@ -52,10 +51,6 @@ final class SearchResultsController: UIViewController {
     }
 
     private func adjustSubViews() {
-        view.style {
-            $0.backgroundColor = .white
-        }
-
         collectionView.style {
             $0.backgroundColor = .white
             $0.delegate = self
@@ -104,5 +99,13 @@ extension SearchResultsController: UICollectionViewDelegate, UICollectionViewDat
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pushImagePreviewController(images: viewModel.images, indexPath: indexPath)
+    }
+
+    private func pushImagePreviewController(images: [ImageItem], indexPath: IndexPath) {
+        let viewModel = ImagePreviewViewModel(images: images, initialIndexPath: indexPath)
+        let controller = ImagePreviewController(viewModel: viewModel)
+        let navigation = UINavigationController(rootViewController: controller)
+        present(navigation, animated: true, completion: nil)
     }
 }

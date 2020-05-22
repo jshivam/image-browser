@@ -16,7 +16,7 @@ private struct Constants {
     static let placeholder = "Search Images"
 }
 
-class SearchController: UIViewController {
+class SearchController: BaseController {
     private let viewModel: SearchViewModelProtocol
     private let textField = SJTextField()
 
@@ -31,7 +31,6 @@ class SearchController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         addSubViews()
         adjustSubViews()
         setupConstraints()
@@ -53,10 +52,6 @@ class SearchController: UIViewController {
     }
 
     private func adjustSubViews() {
-        view.style {
-            $0.backgroundColor = .white
-        }
-
         textField.style {
             $0.delegate = self
             $0.returnKeyType = .search

@@ -32,6 +32,10 @@
 		A06B736E24780DCE00818E05 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B736D24780DCE00818E05 /* ImageCell.swift */; };
 		A06B737024780E5C00818E05 /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B736F24780E5C00818E05 /* UICollectionViewCell+Extensions.swift */; };
 		A06B73732478149E00818E05 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B73722478149E00818E05 /* ViewModelProtocol.swift */; };
+		A06B7376247822AC00818E05 /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B7375247822AC00818E05 /* ImagePreviewController.swift */; };
+		A06B7378247822CF00818E05 /* ImagePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B7377247822CF00818E05 /* ImagePreviewViewModel.swift */; };
+		A06B737A24782A7200818E05 /* ControllerDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B737924782A7200818E05 /* ControllerDismissable.swift */; };
+		A06B737D24782DD600818E05 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B737C24782DD600818E05 /* BaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		A06B736D24780DCE00818E05 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		A06B736F24780E5C00818E05 /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		A06B73722478149E00818E05 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		A06B7375247822AC00818E05 /* ImagePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewController.swift; sourceTree = "<group>"; };
+		A06B7377247822CF00818E05 /* ImagePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewModel.swift; sourceTree = "<group>"; };
+		A06B737924782A7200818E05 /* ControllerDismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDismissable.swift; sourceTree = "<group>"; };
+		A06B737C24782DD600818E05 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +200,7 @@
 		A06B7351247794DB00818E05 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A06B73742478229300818E05 /* ImagePreview */,
 				A06B7366247807EB00818E05 /* SearchResults */,
 				A06B73522477967800818E05 /* Search */,
 			);
@@ -211,6 +220,7 @@
 		A06B73572477995700818E05 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A06B737B24782DC100818E05 /* Controller */,
 				A06B73712478147000818E05 /* Protocols */,
 				A06B73632477B48A00818E05 /* Enums */,
 				A06B735E2477A7C400818E05 /* Views */,
@@ -260,8 +270,26 @@
 			isa = PBXGroup;
 			children = (
 				A06B73722478149E00818E05 /* ViewModelProtocol.swift */,
+				A06B737924782A7200818E05 /* ControllerDismissable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A06B73742478229300818E05 /* ImagePreview */ = {
+			isa = PBXGroup;
+			children = (
+				A06B7375247822AC00818E05 /* ImagePreviewController.swift */,
+				A06B7377247822CF00818E05 /* ImagePreviewViewModel.swift */,
+			);
+			path = ImagePreview;
+			sourceTree = "<group>";
+		};
+		A06B737B24782DC100818E05 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A06B737C24782DD600818E05 /* BaseController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,8 +400,11 @@
 			files = (
 				A06B735A2477998800818E05 /* UIViewController+Extension.swift in Sources */,
 				A06B7356247796F000818E05 /* SearchViewModel.swift in Sources */,
+				A06B737D24782DD600818E05 /* BaseController.swift in Sources */,
+				A06B737A24782A7200818E05 /* ControllerDismissable.swift in Sources */,
 				A06B736C247809B900818E05 /* SJColumnFlowLayout.swift in Sources */,
 				A06B736E24780DCE00818E05 /* ImageCell.swift in Sources */,
+				A06B7378247822CF00818E05 /* ImagePreviewViewModel.swift in Sources */,
 				A06B737024780E5C00818E05 /* UICollectionViewCell+Extensions.swift in Sources */,
 				A059305D2477792300D5CB2B /* SearchImagesService.swift in Sources */,
 				A06B73602477A7D900818E05 /* SJTextField.swift in Sources */,
@@ -386,6 +417,7 @@
 				A059305524776BFF00D5CB2B /* NetworkError.swift in Sources */,
 				A059305A2477783900D5CB2B /* BaseService.swift in Sources */,
 				A059305724776C3800D5CB2B /* EndPoint.swift in Sources */,
+				A06B7376247822AC00818E05 /* ImagePreviewController.swift in Sources */,
 				A06B73622477AA4C00818E05 /* FloatingPoint+Extensions.swift in Sources */,
 				A05930332477676100D5CB2B /* ViewController.swift in Sources */,
 				A06B73502477913700818E05 /* ImageDownloader.swift in Sources */,
