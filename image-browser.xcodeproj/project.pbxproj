@@ -18,6 +18,7 @@
 		A059305A2477783900D5CB2B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05930592477783900D5CB2B /* BaseService.swift */; };
 		A059305D2477792300D5CB2B /* SearchImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059305C2477792300D5CB2B /* SearchImagesService.swift */; };
 		A059305F24777EDB00D5CB2B /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059305E24777EDB00D5CB2B /* SearchResults.swift */; };
+		A06B73502477913700818E05 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B734F2477913700818E05 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		A05930592477783900D5CB2B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		A059305C2477792300D5CB2B /* SearchImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImagesService.swift; sourceTree = "<group>"; };
 		A059305E24777EDB00D5CB2B /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		A06B734F2477913700818E05 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		A059305024776B9100D5CB2B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A06B734D247790EC00818E05 /* Cache */,
 				A059305124776BA300D5CB2B /* Network */,
 			);
 			path = Managers;
@@ -141,6 +144,22 @@
 				A059305E24777EDB00D5CB2B /* SearchResults.swift */,
 			);
 			path = SearchImages;
+			sourceTree = "<group>";
+		};
+		A06B734D247790EC00818E05 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				A06B734E2477910100818E05 /* Images */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		A06B734E2477910100818E05 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A06B734F2477913700818E05 /* ImageDownloader.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +269,7 @@
 				A059305A2477783900D5CB2B /* BaseService.swift in Sources */,
 				A059305724776C3800D5CB2B /* EndPoint.swift in Sources */,
 				A05930332477676100D5CB2B /* ViewController.swift in Sources */,
+				A06B73502477913700818E05 /* ImageDownloader.swift in Sources */,
 				A059302F2477676100D5CB2B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
