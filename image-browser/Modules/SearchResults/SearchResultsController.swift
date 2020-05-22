@@ -69,7 +69,7 @@ final class SearchResultsController: BaseController {
             guard let `self` = self else { return }
             switch status {
             case .error(let error):
-                print(error)
+                self.view.showToast(error.localizedDescription)
             case .fetched:
                 self.collectionView.reloadData()
             }

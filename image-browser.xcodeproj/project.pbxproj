@@ -39,6 +39,9 @@
 		A06B7399247851F600818E05 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B7398247851F600818E05 /* ImageDownloader.swift */; };
 		A06B739D2478542E00818E05 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B739C2478542E00818E05 /* CacheManager.swift */; };
 		A06B739F24785E0E00818E05 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B739E24785E0E00818E05 /* UITableView+Extensions.swift */; };
+		A06B73A22478847300818E05 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = A06B73A12478847300818E05 /* Toast */; };
+		A06B73A52478848B00818E05 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B73A42478848B00818E05 /* Toast.swift */; };
+		A06B73A7247884B500818E05 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B73A6247884B500818E05 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,8 @@
 		A06B7398247851F600818E05 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		A06B739C2478542E00818E05 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		A06B739E24785E0E00818E05 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		A06B73A42478848B00818E05 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		A06B73A6247884B500818E05 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06B73A22478847300818E05 /* Toast in Frameworks */,
 				A06B735D24779A0200818E05 /* Stevia in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +233,7 @@
 		A06B73572477995700818E05 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A06B73A32478848B00818E05 /* Toast */,
 				A06B737B24782DC100818E05 /* Controller */,
 				A06B73712478147000818E05 /* Protocols */,
 				A06B73632477B48A00818E05 /* Enums */,
@@ -243,6 +250,7 @@
 				A06B73592477998800818E05 /* UIViewController+Extension.swift */,
 				A06B736F24780E5C00818E05 /* UICollectionViewCell+Extensions.swift */,
 				A06B739E24785E0E00818E05 /* UITableView+Extensions.swift */,
+				A06B73A6247884B500818E05 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +317,14 @@
 			path = CacheManager;
 			sourceTree = "<group>";
 		};
+		A06B73A32478848B00818E05 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				A06B73A42478848B00818E05 /* Toast.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -327,6 +343,7 @@
 			name = "image-browser";
 			packageProductDependencies = (
 				A06B735C24779A0200818E05 /* Stevia */,
+				A06B73A12478847300818E05 /* Toast */,
 			);
 			productName = "image-browser";
 			productReference = A059302B2477676100D5CB2B /* image-browser.app */;
@@ -380,6 +397,7 @@
 			mainGroup = A05930222477676100D5CB2B;
 			packageReferences = (
 				A06B735B24779A0200818E05 /* XCRemoteSwiftPackageReference "Stevia" */,
+				A06B73A02478847300818E05 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = A059302C2477676100D5CB2B /* Products */;
 			projectDirPath = "";
@@ -427,6 +445,7 @@
 				A06B737024780E5C00818E05 /* UICollectionViewCell+Extensions.swift in Sources */,
 				A06B739D2478542E00818E05 /* CacheManager.swift in Sources */,
 				A059305D2477792300D5CB2B /* SearchImagesService.swift in Sources */,
+				A06B73A7247884B500818E05 /* UIView+Extensions.swift in Sources */,
 				A06B73602477A7D900818E05 /* SJTextField.swift in Sources */,
 				A06B73682478086600818E05 /* SearchResultsController.swift in Sources */,
 				A06B7354247796AC00818E05 /* SearchController.swift in Sources */,
@@ -437,6 +456,7 @@
 				A06B73652477B48A00818E05 /* FetchRequestStatus.swift in Sources */,
 				A059305524776BFF00D5CB2B /* NetworkError.swift in Sources */,
 				A059305A2477783900D5CB2B /* BaseService.swift in Sources */,
+				A06B73A52478848B00818E05 /* Toast.swift in Sources */,
 				A059305724776C3800D5CB2B /* EndPoint.swift in Sources */,
 				A06B7376247822AC00818E05 /* ImagePreviewController.swift in Sources */,
 				A06B73622477AA4C00818E05 /* FloatingPoint+Extensions.swift in Sources */,
@@ -713,6 +733,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		A06B73A02478847300818E05 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -720,6 +748,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A06B735B24779A0200818E05 /* XCRemoteSwiftPackageReference "Stevia" */;
 			productName = Stevia;
+		};
+		A06B73A12478847300818E05 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A06B73A02478847300818E05 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

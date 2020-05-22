@@ -83,7 +83,7 @@ class SearchController: BaseController {
             self.hideTextFieldLoader()
             switch status {
             case .error(let error):
-                print(error)
+                self.view.showToast(error.localizedDescription)
             case .fetched:
                 self.pushResultsController(keyword: keyword, images: self.viewModel.images)
             }
