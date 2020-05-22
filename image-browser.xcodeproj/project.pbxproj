@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,13 @@
 		A059305D2477792300D5CB2B /* SearchImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059305C2477792300D5CB2B /* SearchImagesService.swift */; };
 		A059305F24777EDB00D5CB2B /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059305E24777EDB00D5CB2B /* SearchResults.swift */; };
 		A06B73502477913700818E05 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B734F2477913700818E05 /* ImageDownloader.swift */; };
+		A06B7354247796AC00818E05 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B7353247796AC00818E05 /* SearchController.swift */; };
+		A06B7356247796F000818E05 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B7355247796F000818E05 /* SearchViewModel.swift */; };
+		A06B735A2477998800818E05 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B73592477998800818E05 /* UIViewController+Extension.swift */; };
+		A06B735D24779A0200818E05 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = A06B735C24779A0200818E05 /* Stevia */; };
+		A06B73602477A7D900818E05 /* SJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B735F2477A7D900818E05 /* SJTextField.swift */; };
+		A06B73622477AA4C00818E05 /* FloatingPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B73612477AA4C00818E05 /* FloatingPoint+Extensions.swift */; };
+		A06B73652477B48A00818E05 /* FetchRequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B73642477B48A00818E05 /* FetchRequestStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,12 @@
 		A059305C2477792300D5CB2B /* SearchImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImagesService.swift; sourceTree = "<group>"; };
 		A059305E24777EDB00D5CB2B /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		A06B734F2477913700818E05 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		A06B7353247796AC00818E05 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		A06B7355247796F000818E05 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		A06B73592477998800818E05 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A06B735F2477A7D900818E05 /* SJTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJTextField.swift; sourceTree = "<group>"; };
+		A06B73612477AA4C00818E05 /* FloatingPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Extensions.swift"; sourceTree = "<group>"; };
+		A06B73642477B48A00818E05 /* FetchRequestStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequestStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06B735D24779A0200818E05 /* Stevia in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +103,8 @@
 		A059302D2477676100D5CB2B /* image-browser */ = {
 			isa = PBXGroup;
 			children = (
+				A06B73572477995700818E05 /* Common */,
+				A06B7351247794DB00818E05 /* Modules */,
 				A059305024776B9100D5CB2B /* Managers */,
 				A059302E2477676100D5CB2B /* AppDelegate.swift */,
 				A05930322477676100D5CB2B /* ViewController.swift */,
@@ -141,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				A059305C2477792300D5CB2B /* SearchImagesService.swift */,
-				A059305E24777EDB00D5CB2B /* SearchResults.swift */,
 			);
 			path = SearchImages;
 			sourceTree = "<group>";
@@ -162,6 +177,59 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		A06B7351247794DB00818E05 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A06B73522477967800818E05 /* Search */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A06B73522477967800818E05 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A059305E24777EDB00D5CB2B /* SearchResults.swift */,
+				A06B7353247796AC00818E05 /* SearchController.swift */,
+				A06B7355247796F000818E05 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A06B73572477995700818E05 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A06B73632477B48A00818E05 /* Enums */,
+				A06B735E2477A7C400818E05 /* Views */,
+				A06B73582477996800818E05 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A06B73582477996800818E05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A06B73612477AA4C00818E05 /* FloatingPoint+Extensions.swift */,
+				A06B73592477998800818E05 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A06B735E2477A7C400818E05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A06B735F2477A7D900818E05 /* SJTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A06B73632477B48A00818E05 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A06B73642477B48A00818E05 /* FetchRequestStatus.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,6 +246,9 @@
 			dependencies = (
 			);
 			name = "image-browser";
+			packageProductDependencies = (
+				A06B735C24779A0200818E05 /* Stevia */,
+			);
 			productName = "image-browser";
 			productReference = A059302B2477676100D5CB2B /* image-browser.app */;
 			productType = "com.apple.product-type.application";
@@ -228,6 +299,9 @@
 				Base,
 			);
 			mainGroup = A05930222477676100D5CB2B;
+			packageReferences = (
+				A06B735B24779A0200818E05 /* XCRemoteSwiftPackageReference "Stevia" */,
+			);
 			productRefGroup = A059302C2477676100D5CB2B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,12 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06B735A2477998800818E05 /* UIViewController+Extension.swift in Sources */,
+				A06B7356247796F000818E05 /* SearchViewModel.swift in Sources */,
 				A059305D2477792300D5CB2B /* SearchImagesService.swift in Sources */,
+				A06B73602477A7D900818E05 /* SJTextField.swift in Sources */,
+				A06B7354247796AC00818E05 /* SearchController.swift in Sources */,
 				A059305324776BB800D5CB2B /* NetworkManager.swift in Sources */,
 				A059305F24777EDB00D5CB2B /* SearchResults.swift in Sources */,
+				A06B73652477B48A00818E05 /* FetchRequestStatus.swift in Sources */,
 				A059305524776BFF00D5CB2B /* NetworkError.swift in Sources */,
 				A059305A2477783900D5CB2B /* BaseService.swift in Sources */,
 				A059305724776C3800D5CB2B /* EndPoint.swift in Sources */,
+				A06B73622477AA4C00818E05 /* FloatingPoint+Extensions.swift in Sources */,
 				A05930332477676100D5CB2B /* ViewController.swift in Sources */,
 				A06B73502477913700818E05 /* ImageDownloader.swift in Sources */,
 				A059302F2477676100D5CB2B /* AppDelegate.swift in Sources */,
@@ -531,6 +611,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A06B735B24779A0200818E05 /* XCRemoteSwiftPackageReference "Stevia" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/freshOS/Stevia.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A06B735C24779A0200818E05 /* Stevia */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A06B735B24779A0200818E05 /* XCRemoteSwiftPackageReference "Stevia" */;
+			productName = Stevia;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A05930232477676100D5CB2B /* Project object */;
 }
