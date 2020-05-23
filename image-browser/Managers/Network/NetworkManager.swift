@@ -16,10 +16,12 @@ protocol NetworkManagerProtocol {
 class NetworkManager: NetworkManagerProtocol {
     static let shared = NetworkManager()
     private let session: URLSessionProtocol
-    private let baseURL = EndPoint.baseURL
+    private let baseURL: String
 
-    init(session: URLSessionProtocol = URLSession.shared) {
+    init(session: URLSessionProtocol = URLSession.shared,
+         baseURL: String = EndPoint.baseURL) {
         self.session = session
+        self.baseURL = baseURL
     }
 
     func get(endpoint: String, parameters: [String : String], callback: @escaping completeClosure ) {

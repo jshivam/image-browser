@@ -42,6 +42,8 @@
 		A06B73A22478847300818E05 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = A06B73A12478847300818E05 /* Toast */; };
 		A06B73A52478848B00818E05 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B73A42478848B00818E05 /* Toast.swift */; };
 		A06B73A7247884B500818E05 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B73A6247884B500818E05 /* UIView+Extensions.swift */; };
+		A0C97DEE24789E6800124FF8 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C97DEC24789E6800124FF8 /* NetworkManagerTests.swift */; };
+		A0C97DEF24789E6800124FF8 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C97DED24789E6800124FF8 /* URLSessionMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		A06B739E24785E0E00818E05 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		A06B73A42478848B00818E05 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		A06B73A6247884B500818E05 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A0C97DEC24789E6800124FF8 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		A0C97DED24789E6800124FF8 /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 		A05930442477676600D5CB2B /* image-browserTests */ = {
 			isa = PBXGroup;
 			children = (
+				A0C97DEB24789E6800124FF8 /* Network */,
 				A05930452477676600D5CB2B /* image_browserTests.swift */,
 				A05930472477676600D5CB2B /* Info.plist */,
 			);
@@ -325,6 +330,15 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
+		A0C97DEB24789E6800124FF8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A0C97DEC24789E6800124FF8 /* NetworkManagerTests.swift */,
+				A0C97DED24789E6800124FF8 /* URLSessionMock.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,6 +484,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C97DEF24789E6800124FF8 /* URLSessionMock.swift in Sources */,
+				A0C97DEE24789E6800124FF8 /* NetworkManagerTests.swift in Sources */,
 				A05930462477676600D5CB2B /* image_browserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
