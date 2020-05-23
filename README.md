@@ -32,76 +32,58 @@ To run this project, please follow following steps:
 
 Please check below for low level diagram:
 
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/architecture.png)
+![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/architecture.png)
 
 1. View / View Controller - This layer is responsible to handle UI operation based on callback from viewModel class.
 2. ViewModel - This layer contains all business logic and list of models.
 4. APIHandler - On this layer we have kept logic to parse individual response. This layer is designed by keeping in mind that all checks on server response and parsing will be implemented here. 
-5. DataBaseManager - Responsible to handle data from DB.
+5. Persistence Manager - Responsible to handle data from Persistence Strore of your choice.
 6. HTTPClient - Responsible to make HTTP api call.
 
 # App Data Flow
-- Checks for Records in Data Base
-- if records exists, display the records from Data Base
-- if records doesn't exists, make network call
-- If succesfully fetched records from server, save the records to DB and display the records
-- If unsuccesfully fetched records from server, display error 
+- Type in the keyword and hit search
+- If succesfully fetched the results from server, persistet the latest 10 keywords 
+- If unsuccesfully fetched records from server, display error
+- When focused into the search box, an auto-suggest list view is displayed below the search box showing my last 10 successful queries.
 
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/flowChart.png)
+![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/flowChart.png)
 
 # Caching
 
-1. App using CoreData with Sqlite to make cache of JSON response.
-2. For Image caching, App is using third party AlamofireImage.
-3. Cache is deleted when App succesfully fetches fresh data from server by using 'Pull to Refresh' feature.
+1. App is using UserDefaults to cache recent searched keywords.
+2. For Image caching, app is using URLCache & NSCache.
 
 # Assumptions        
-1.  App support Localization, but for this version app contains only english text.     
-2.  App support iPhone device in Portrait mode only. 
-3.  Supported mobile platforms are iOS (11.x, 12.x, 13.x)        
-4.  Device support - iPhone 5s, iPhone 6 Series, iPhone SE, iPhone 7 Series, iPhone 8 Series, iPhone X Series    
+1.  App support iPhone device in Portrait mode only. 
+2.  Supported mobile platforms are iOS (12.x, 13.x)        
+3.  Device support - iPhone 5s, iPhone 6 Series, iPhone SE, iPhone 7 Series, iPhone 8 Series, iPhone X Series    
 
-# Supported Features         
-1.  App supports Dark Mode.     
-2.  App support 3D touch peek and pop. 
 
 # Crashlytics
 
 App has implemented crashlytics using Firebase. 
 1. Documentation: https://firebase.google.com/docs/crashlytics/get-started?platform=ios.
 
-# SwiftLint
-1. If need to change the rules of swiftlint, goto root folder of the project
-2. Open the .swiftlint.yml file and modify the rules based on the requirement
-
 # CocoaPods Used
 
-- Alamofire
-- AlamofireImage
-- SwiftLint
 - Firebase/Analytics
-- Fabric
-- Crashlytics
+
+# Swift Package Manager
 - Toast-Swift
+- Stevia Autolayout
 
-
-# Network Calling
-
-App used  Alamofire for making http call.
-
-
-# Displaying Delivery Details
-
-1. Once user select any addess, app shows annotation to selected address on the Apple Map. 
+# Autolayouting
+App used Stevia for setting up contraints
 
 # Pagination Handling
-
 For pagination logic, App will assume more pages till the time it don't get empty list of response from server. In case of offline mode, it will always try for next page ( this is to make sure that if app comes online then it should return response).
 
 # ScreenShots
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryList.png)
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryDetail.png)
+![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/ss1.png)
+![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/ss2.png)
+![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/ss3.png)
 
 # TODO / Improvements
 -  UI test cases
--  Error Handing in CoreData
+-  ImageDownloader Unit Test cases
+-  Improvise ImageDownloader's image caching logic
