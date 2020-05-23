@@ -1,9 +1,9 @@
 //
 //  FirebaseManager.swift
-//  Deliveries
+//  image-browser
 //
-//  Created by Shivam Jaiswal on 08/11/19.
-//  Copyright © 2019 Shivam Jaiswal. All rights reserved.
+//  Created by Shivam Jaiswal on 22/05/20.
+//  Copyright © 2020 Shivam Jaiswal. All rights reserved.
 //
 
 import Firebase

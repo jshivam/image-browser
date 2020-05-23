@@ -53,7 +53,7 @@
 		A0A2CBB02478BD1900F7C518 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0A2CBAF2478BD1900F7C518 /* GoogleService-Info.plist */; };
 		A0C97DEE24789E6800124FF8 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C97DEC24789E6800124FF8 /* NetworkManagerTests.swift */; };
 		A0C97DEF24789E6800124FF8 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C97DED24789E6800124FF8 /* URLSessionMock.swift */; };
-		A0EB3A26247928CE00288835 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB3A25247928CE00288835 /* FirebaseManager.swift */; };
+		A0EB3A2A247929A300288835 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB3A29247929A300288835 /* FirebaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +117,7 @@
 		A0A2CBAF2478BD1900F7C518 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0C97DEC24789E6800124FF8 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		A0C97DED24789E6800124FF8 /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
-		A0EB3A25247928CE00288835 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		A0EB3A29247929A300288835 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A1769845EAEBA7B649AB2628 /* Pods-image-browser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-image-browser.debug.xcconfig"; path = "Target Support Files/Pods-image-browser/Pods-image-browser.debug.xcconfig"; sourceTree = "<group>"; };
 		A603C8B13EB0BECDCE43687C /* libPods-image-browserTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-image-browserTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,7 +191,7 @@
 		A059305024776B9100D5CB2B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				A0EB3A23247928CE00288835 /* Firebase */,
+				A0EB3A27247929A300288835 /* Firebase */,
 				A06B734D247790EC00818E05 /* Cache */,
 				A059305124776BA300D5CB2B /* Network */,
 			);
@@ -447,19 +447,18 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		A0EB3A23247928CE00288835 /* Firebase */ = {
+		A0EB3A27247929A300288835 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				A0EB3A24247928CE00288835 /* Crashlytics */,
+				A0EB3A28247929A300288835 /* Crashlytics */,
 			);
-			name = Firebase;
-			path = ../../../../Desktop/Firebase;
+			path = Firebase;
 			sourceTree = "<group>";
 		};
-		A0EB3A24247928CE00288835 /* Crashlytics */ = {
+		A0EB3A28247929A300288835 /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
-				A0EB3A25247928CE00288835 /* FirebaseManager.swift */,
+				A0EB3A29247929A300288835 /* FirebaseManager.swift */,
 			);
 			path = Crashlytics;
 			sourceTree = "<group>";
@@ -655,7 +654,7 @@
 				A06B737024780E5C00818E05 /* UICollectionViewCell+Extensions.swift in Sources */,
 				A06B739D2478542E00818E05 /* CacheManager.swift in Sources */,
 				A059305D2477792300D5CB2B /* SearchImagesService.swift in Sources */,
-				A0EB3A26247928CE00288835 /* FirebaseManager.swift in Sources */,
+				A0EB3A2A247929A300288835 /* FirebaseManager.swift in Sources */,
 				A06B73A7247884B500818E05 /* UIView+Extensions.swift in Sources */,
 				A06B73602477A7D900818E05 /* SJTextField.swift in Sources */,
 				A06B73682478086600818E05 /* SearchResultsController.swift in Sources */,
