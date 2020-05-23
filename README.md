@@ -46,7 +46,7 @@ Please check below for low level diagram:
 - If unsuccesfully fetched records from server, display error
 - When focused into the search box, an auto-suggest list view is displayed below the search box showing my last 10 successful queries.
 
-![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/flowChart.png)
+![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/FlowChart.png)
 
 # Caching
 
@@ -79,9 +79,7 @@ App used Stevia for setting up contraints
 For pagination logic, App will assume more pages till the time it don't get empty list of response from server. In case of offline mode, it will always try for next page ( this is to make sure that if app comes online then it should return response).
 
 # ScreenShots
-![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/ss1.png)
-![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/ss2.png)
-![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/ss3.png)
+![ScreenShot](https://github.com/jshivam/image-browser/blob/master/ScreenShots/ss.png)
 
 # TODO / Improvements
 -  UI test cases
