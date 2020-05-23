@@ -153,13 +153,11 @@
 		A059302D2477676100D5CB2B /* image-browser */ = {
 			isa = PBXGroup;
 			children = (
+				A0A2CBAE2478BADF00F7C518 /* Resources */,
 				A0A2CBAD2478B99500F7C518 /* AppDelegate */,
 				A06B73572477995700818E05 /* Common */,
 				A06B7351247794DB00818E05 /* Modules */,
 				A059305024776B9100D5CB2B /* Managers */,
-				A05930372477676600D5CB2B /* Assets.xcassets */,
-				A05930392477676600D5CB2B /* LaunchScreen.storyboard */,
-				A059303C2477676600D5CB2B /* Info.plist */,
 			);
 			path = "image-browser";
 			sourceTree = "<group>";
@@ -412,6 +410,16 @@
 				A059302E2477676100D5CB2B /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A0A2CBAE2478BADF00F7C518 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A05930372477676600D5CB2B /* Assets.xcassets */,
+				A05930392477676600D5CB2B /* LaunchScreen.storyboard */,
+				A059303C2477676600D5CB2B /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A0C97DEB24789E6800124FF8 /* Network */ = {
@@ -724,7 +732,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YYU9SVC7P9;
-				INFOPLIST_FILE = "image-browser/Info.plist";
+				INFOPLIST_FILE = "image-browser/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -743,7 +751,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YYU9SVC7P9;
-				INFOPLIST_FILE = "image-browser/Info.plist";
+				INFOPLIST_FILE = "image-browser/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
