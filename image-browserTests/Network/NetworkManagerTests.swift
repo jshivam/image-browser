@@ -35,7 +35,6 @@ class NetworkManagerTests: XCTestCase {
 
     func testErrorResponse() {
         let fetchExpectation = expectation(description: "fetchExpectation")
-
         session.nextError = NetworkError.error(NetworkError.standardError)
         httpClient.get(endpoint: "", parameters: [:]) { (data, error) in
             fetchExpectation.fulfill()

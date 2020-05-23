@@ -15,9 +15,9 @@ protocol CacheManagerProtocol {
 
 class CacheManager: CacheManagerProtocol {
     static let shared = CacheManager()
-    private let userDefaults: UserDefaults
+    private let userDefaults: UserDefaultsProtocol
 
-    init(userDefaults: UserDefaults = UserDefaults.standard) {
+    init(userDefaults: UserDefaultsProtocol = UserDefaults.standard) {
         self.userDefaults = userDefaults
     }
 
@@ -39,3 +39,10 @@ extension UserDefaults {
         case keywords
     }
 }
+
+protocol UserDefaultsProtocol {
+    func set(_ value: Any?, forKey defaultName: String)
+    func stringArray(forKey: String) -> [String]?
+}
+
+extension UserDefaults: UserDefaultsProtocol {}
