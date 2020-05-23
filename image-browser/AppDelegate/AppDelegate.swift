@@ -12,6 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseManager.configure()
+        Toast.configure()
+
         let viewModel = SearchViewModel()
         let controller = SearchController(viewModel: viewModel)
         let navigation = UINavigationController(rootViewController: controller)
